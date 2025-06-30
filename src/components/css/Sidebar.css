@@ -1,0 +1,61 @@
+/* ---------- SIDEBAR CONTAINER ---------- */
+.crmsidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 60px;                    /* JS will still override width on hover */
+  backdrop-filter: blur(4px);
+  background: linear-gradient(180deg, #457B9D 0%, #34668e 60%, #274c74 100%);
+  color: #fff;
+  padding-top: 20px;
+  overflow: hidden;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.25);
+  transition: width 0.3s ease;
+  z-index: 1000;
+}
+
+/* ---------- LINK ROW ---------- */
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 20px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: inherit;                 /* <— keeps same colour always */
+  letter-spacing: 0.3px;
+  user-select: none;
+  position: relative;
+  transition: background 0.25s, transform 0.25s;
+}
+
+.sidebar-item:visited,
+.sidebar-item:active {
+  color: inherit;                 /* <— prevents visited/active colour shift */
+}
+
+.sidebar-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateX(2px);     /* gentle nudge */
+}
+
+/* subtle left glow when item has .sidebar-active (optional) */
+.sidebar-active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: #F1FAEE;
+}
+
+/* ---------- ICON + LABEL ---------- */
+.sidebar-icon  { font-size: 1.35rem; min-width: 24px; }
+.sidebar-label { white-space: nowrap; }
+
+/* optional: add small pulse on hover of icon */
+.sidebar-item:hover .sidebar-icon {
+  transform: scale(1.05);
+}
