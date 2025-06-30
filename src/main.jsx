@@ -6,7 +6,8 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    {/* basename must equal repo name with leading slash */}
+    <BrowserRouter basename="/CRMDashboard">
       <App />
     </BrowserRouter>
   </React.StrictMode>
